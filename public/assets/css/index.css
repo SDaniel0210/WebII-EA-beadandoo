@@ -148,3 +148,45 @@ a:hover{ color:#c4f3cd; }
 /* ===== Görgetősáv off ===== */
 #sidebar::-webkit-scrollbar,
 #sidebar .inner::-webkit-scrollbar{ width:0; height:0; }
+
+/* ===== Flash (toast) finomított stílus ===== */
+#flash-host{
+  position: fixed;
+  top: 18px;
+  left: calc(var(--sbw, 320px) + 20px);
+  right: 24px;
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+/* Alap doboz: üveges háttér, lágy árnyék, szép átmenet */
+#flash-host .alert{
+  pointer-events: auto;
+  margin: 0;
+  padding: 14px 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.25);
+  transition: opacity .6s ease, transform .4s ease, background-color .6s ease;
+  border: 1px solid rgba(255,255,255,.15);
+}
+
+/* Siker és hiba különböző, áttűnő háttérrel */
+#flash-host .alert-success{
+  background-color: rgba(34,197,94,0.18);
+  color: #b9f6ca;
+  border-color: rgba(34,197,94,0.45);
+}
+
+#flash-host .alert-danger{
+  background-color: rgba(255,82,82,0.18);
+  color: #ffbaba;
+  border-color: rgba(255,82,82,0.45);
+}
+
+/* Eltűnés animáció */
+#flash-host .alert.is-hiding{
+  opacity: 0;
+  transform: translateY(-8px);
+  background-color: transparent;
+}

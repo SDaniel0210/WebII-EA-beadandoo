@@ -6,16 +6,7 @@
 <section class="wrapper style1 fade-up">
   <div class="inner" style="max-width:700px">
     <h2>Regisztráció</h2>
-    @if ($errors->any())
-  <div class="box" style="border:1px solid #e66;padding:12px;margin-bottom:16px">
-    <ul style="margin:0 0 0 1rem">
-      @foreach ($errors->all() as $e)
-        <li>{{ $e }}</li>
-      @endforeach
-    </ul>
-  </div>
-@endif
-
+    
     <p>Itt tudsz új felhasználót létrehozni.</p>
 
     <form method="POST" action="{{ route('register.store') }}">

@@ -40,10 +40,16 @@
     </div>
   </section>
 
+
   {{-- JOBB OLDALI TARTALOM --}}
-  <div id="wrapper">
-    @yield('content')
+<div id="wrapper">
+  <div id="flash-host">
+    @include('partials.alerts')
   </div>
+
+  @yield('content')
+</div>
+
 
   {{-- Footer --}}
   <footer id="footer" class="wrapper style1-alt">
@@ -63,6 +69,28 @@
   <script src="{{ asset('assets/js/breakpoints.min.js') }}"></script>
   <script src="{{ asset('assets/js/util.js') }}"></script>
   <script src="{{ asset('assets/js/main.js') }}"></script>
+  <script>
+(function () {
+  const sb = document.getElementById('sidebar');
+  if (!sb) return;
+  function place() {
+    const w = sb.getBoundingClientRect().width || 320;
+    document.documentElement.style.setProperty('--sbw', w + 'px');
+  }
+  place();
+  window.addEventListener('resize', place);
+})();
+
+// 3 mp után finoman tűnjön el (ha van toast)
+setTimeout(() => {
+  const el = document.querySelector('#flash-host .alert');
+  if (el) {
+    el.classList.add('is-hiding');
+    setTimeout(() => el.remove(), 400);
+  }
+}, 3000);
+</script>
+
   @stack('scripts')
 </body>
 </html>
