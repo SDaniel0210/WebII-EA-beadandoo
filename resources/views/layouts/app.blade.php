@@ -7,9 +7,9 @@
 
   {{-- Hyperspace CSS --}}
   <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+  <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}"> 
   <noscript><link rel="stylesheet" href="{{ asset('assets/css/noscript.css') }}" /></noscript>
 
-  {{-- Favicon (nálad a public/images alatt van) --}}
   <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}"/>
 
   @stack('head')
