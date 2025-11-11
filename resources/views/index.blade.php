@@ -4,31 +4,6 @@
 
 @section('content')
   {{-- Sidebar --}}
-  <section id="sidebar">
-    <div class="inner">
-        
-        <div class="auth">
-            <a href="#" class="button small outline">Bejelentkezés</a>
-            <a href="#" class="button small primary">Regisztráció</a>  
-        </div>
-
-      <nav>
-        <ul>
-          <li><a href="#intro">Bemutatkozás</a></li>
-          <li><a href="#one">Lottók</a></li>
-          <li><a href="#two">Diagramm </a></li>
-          <li><a href="#three">Adatbázis</a></li>
-          <li><a href="#four">Kapcsolat</a></li>
-          <li><a href="#five">Admin menü</a></li> 
-
-        </ul>
-      </nav>
-        <div class="status">
-            <span class="muted">Bejelentkezve mint: Vendég</span>
-        </div>
-
-    </div>
-  </section>
 
   {{-- Wrapper --}}
   <div id="wrapper">
