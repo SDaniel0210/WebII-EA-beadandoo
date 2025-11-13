@@ -40,9 +40,9 @@
       <nav>
         <ul>
           <li><a href="{{ url('/') }}#intro">Bemutatkozás</a></li>
-          <li><a href="{{ url('/') }}#one">Lottók</a></li>
+          <li><a href="{{ url('/') }}#one">Adatbázis</a></li>
           <li><a href="{{ url('/') }}#two">Diagramm</a></li>
-          <li><a href="{{ url('/') }}#three">Adatbázis</a></li>
+          <li><a href="{{ route('database.index') }}">Lottók</a></li>
           <li><a href="{{ url('/') }}#four">Kapcsolat</a></li>
           <li><a href="{{ url('/') }}#five">Admin menü</a></li> 
         </ul>
