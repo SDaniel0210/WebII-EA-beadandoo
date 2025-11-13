@@ -8,6 +8,7 @@
   {{-- Hyperspace CSS --}}
   <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
   <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}"> 
+  <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
   <noscript><link rel="stylesheet" href="{{ asset('assets/css/noscript.css') }}" /></noscript>
   <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}"/>
 
@@ -19,9 +20,22 @@
   <section id="sidebar">
     <div class="inner">
       <div class="auth">
-        <a href="#" class="button small outline">Bejelentkezés</a>
-        <a href="{{ route('register') }}" class="button small primary">Regisztráció</a>  
+        @guest
+          <a href="#" id="login-toggle" class="button small outline">Bejelentkezés</a>
+          <a href="{{ route('register') }}" class="button small primary">Regisztráció</a>  
+        @else
+          <span class="welcome">
+            Szia, {{ Auth::user()->name }}
+          </span>
+          <form method="POST" action="{{ route('logout') }}" style="margin:0;">
+            @csrf
+            <button type="submit" class="button small outline logout-btn">
+              Kijelentkezés
+            </button>
+          </form>
+        @endguest
       </div>
+
 
       <nav>
         <ul>
@@ -33,10 +47,48 @@
           <li><a href="{{ url('/') }}#five">Admin menü</a></li> 
         </ul>
       </nav>
+          @guest
+            <div id="login-panel">
+              <form method="POST" action="{{ route('login') }}" class="login-form">
+                @csrf
+
+                <div class="field">
+                  <label for="login-name">Felhasználónév</label>
+                  <input type="text"
+                        id="login-name"
+                        name="name"
+                        value="{{ old('name') }}"
+                        required>
+                </div>
+
+                <div class="field">
+                  <label for="login-password">Jelszó</label>
+                  <input type="password"
+                        id="login-password"
+                        name="password"
+                        required>
+                </div>
+
+                <button type="submit" class="login-submit">
+                  Belépés
+                </button>
+
+                @error('login')
+                  <p class="login-error">{{ $message }}</p>
+                @enderror
+              </form>
+            </div>
+        @endguest
+
 
       <div class="status">
-        <span class="muted">Bejelentkezve mint: Vendég</span>
+        @auth
+          <span class="muted">Bejelentkezve mint: {{ Auth::user()->name }}</span>
+        @else
+          <span class="muted">Bejelentkezve mint: Vendég</span>
+        @endauth
       </div>
+
     </div>
   </section>
 
@@ -81,7 +133,6 @@
   window.addEventListener('resize', place);
 })();
 
-// 3 mp után finoman tűnjön el (ha van toast)
 setTimeout(() => {
   const el = document.querySelector('#flash-host .alert');
   if (el) {
@@ -90,6 +141,18 @@ setTimeout(() => {
   }
 }, 3000);
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const loginToggle = document.getElementById('login-toggle');
+  if (!loginToggle) return;
+
+  loginToggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.body.classList.toggle('login-open');
+  });
+});
+</script>
+
 
   @stack('scripts')
 </body>

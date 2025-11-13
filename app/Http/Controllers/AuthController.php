@@ -27,10 +27,43 @@ class AuthController extends Controller
             'name'     => $data['name'],
             'email'    => $data['email'],
             'password' => Hash::make($data['password']),
-            'role'     => 'registered', // ha van role mező és ez az alap
+            'role'     => 'registered',
         ]);
 
         Auth::login($user);
+
         return redirect('/')->with('ok','Sikeres regisztráció!');
+    }
+
+    // ==== LOGIN ====
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'name'     => ['required', 'string'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt([
+            'name'     => $credentials['name'],
+            'password' => $credentials['password'],
+        ])) {
+            $request->session()->regenerate();
+            return redirect('/')->with('ok', 'Sikeres bejelentkezés!');
+        }
+
+        return back()->withErrors([
+            'login' => 'Hibás felhasználónév vagy jelszó.',
+        ])->withInput($request->only('name'));
+    }
+
+    // ==== LOGOUT ====
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/')->with('ok','Sikeresen kijelentkeztél.');
     }
 }
