@@ -44,6 +44,7 @@
           <li><a href="{{ url('/') }}#two">Diagramm</a></li>
           <li><a href="{{ route('database.index') }}">Lottók</a></li>
           <li><a href="{{ route('messages.create') }}">Kapcsolat</a></li>
+          <li><a href="{{ url('/') }}#five">Üzenetek</a></li> 
           <li><a href="{{ url('/') }}#five">Admin menü</a></li> 
         </ul>
       </nav>
