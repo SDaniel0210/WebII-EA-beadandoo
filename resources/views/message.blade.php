@@ -23,12 +23,15 @@
 
                 <div class="field half">
                     <label for="name">Név</label>
-                    <input type="text" id="name" name="name" value="{{ old('name') }}">
+                    <input type="text" id="name" name="name"
+                        value="{{ old('name', Auth::check() ? Auth::user()->name : '') }}">
                 </div>
 
                 <div class="field half">
                     <label for="email">Email</label>
-                    <input type="text" id="email" name="email" value="{{ old('email') }}">
+                    <input type="text" id="email" name="email"
+                        value="{{ old('email', Auth::check() ? Auth::user()->email : '') }}">
+
                 </div>
 
                 <div class="field">
