@@ -43,7 +43,7 @@
           <li><a href="{{ url('/') }}#one">Adatbázis</a></li>
           <li><a href="{{ url('/') }}#two">Diagramm</a></li>
           <li><a href="{{ route('database.index') }}">Lottók</a></li>
-          <li><a href="{{ url('/') }}#four">Kapcsolat</a></li>
+          <li><a href="{{ route('messages.create') }}">Kapcsolat</a></li>
           <li><a href="{{ url('/') }}#five">Admin menü</a></li> 
         </ul>
       </nav>

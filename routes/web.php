@@ -14,3 +14,9 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/adatbazis', [DatabaseController::class, 'index'])
     ->name('database.index');
+
+Route::get('/kapcsolat', [App\Http\Controllers\MessageController::class, 'create'])
+    ->name('messages.create');
+
+Route::post('/kapcsolat', [App\Http\Controllers\MessageController::class, 'store'])
+    ->name('messages.store');
