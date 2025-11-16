@@ -40,7 +40,7 @@
       <nav>
         <ul>
           <li><a href="{{ url('/') }}#intro">Bemutatkozás</a></li>
-          <li><a href="{{ url('/') }}#one">Adatbázis</a></li>
+          <li><a href="{{ route('users.index') }}">Felhasználók</a></li>
           <li><a href="{{ url('/') }}#two">Diagramm</a></li>
           <li><a href="{{ route('database.index') }}">Lottók</a></li>
           <li><a href="{{ route('messages.create') }}">Kapcsolat</a></li>
