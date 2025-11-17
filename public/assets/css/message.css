@@ -1,0 +1,70 @@
+.contact-inner {
+  max-width: 900px;
+}
+
+.contact-card {
+  background: rgba(0,0,0,.25);
+  border: 1px solid rgba(34,197,94,.25);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 14px 35px rgba(0,0,0,.4);
+}
+
+.contact-form .field {
+  margin-bottom: 1.2rem;
+}
+
+.contact-form label {
+  color: #d8f3dd;
+  letter-spacing: .05em;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.15);
+  padding: .75rem 1rem;
+  border-radius: 10px;
+  color: #e9f5ea;
+}
+
+.alert {
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  font-size: .9rem;
+}
+
+.alert.success {
+  background: rgba(34,197,94,.35);
+  border: 1px solid rgba(34,197,94,.55);
+}
+
+.alert.danger {
+  background: rgba(255,80,80,.25);
+  border: 1px solid rgba(255,80,80,.55);
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.contact-actions .button {
+  margin: 0;
+}
+
+/* Registration*/
+.contact-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.contact-actions .button {
+  margin: 0;
+}
