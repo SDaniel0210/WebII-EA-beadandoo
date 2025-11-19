@@ -64,15 +64,6 @@ input[type="checkbox"] {
             <label for="password_confirmation">Jelszó megerősítése</label>
             <input type="password" id="password_confirmation" name="password_confirmation">
           </div>
-
-          {{-- ADMIN CHECKBOX --}}
-          <div class="field">
-            <label class="checkbox-label">
-              <input type="checkbox" name="make_admin" value="1">
-              <strong>Admin felhasználó létrehozása</strong>
-            </label>
-          </div>
-
         </div>
 
         <ul class="actions contact-actions">

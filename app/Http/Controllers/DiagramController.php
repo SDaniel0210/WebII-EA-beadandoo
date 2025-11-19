@@ -23,6 +23,6 @@ class DiagramController extends Controller
         $labels = $data->pluck('nap');
         $values = $data->pluck('db');
 
-        return view('diagram.index', compact('labels', 'values'));
+        return view('diagram', compact('labels', 'values'));
     }
 }

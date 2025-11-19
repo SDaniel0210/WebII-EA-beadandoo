@@ -3909,3 +3909,13 @@ input, select, textarea {
 .pager svg {
     display: none !important;
 }
+/* === Globális háttér – lila body kinyírása === */
+body {
+  background: #183222 !important;   /* ugyanaz, mint a wrapper.style1 nálad */
+}
+
+/* Hyperspace fix háttérréteg is legyen zöld */
+#bg:before {
+  background: #183222 !important;
+}
+

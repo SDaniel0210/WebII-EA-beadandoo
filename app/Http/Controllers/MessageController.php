@@ -45,6 +45,6 @@ class MessageController extends Controller
                             ->orderBy('created_at', 'desc')
                             ->get();
 
-        return view('messages.index', compact('messages'));
+        return view('messages', compact('messages'));
     }
 }

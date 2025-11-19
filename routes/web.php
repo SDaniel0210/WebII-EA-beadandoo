@@ -26,7 +26,7 @@ Route::middleware('auth')->get('/admin', function () {
         abort(403); // Tiltott
     }
 
-    return view('admin.index');
+    return view('admin'); 
 })->name('admin.index');
 
 

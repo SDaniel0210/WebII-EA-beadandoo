@@ -1,0 +1,17 @@
+.admin-links {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.admin-links li + li {
+  margin-top: 0.75rem;
+}
+
+.admin-links a {
+  color: #e9f5ea;
+  text-decoration: underline;
+}
+
+body.admin-page #wrapper {
+  min-height: calc(100vh - 4rem);     
+}

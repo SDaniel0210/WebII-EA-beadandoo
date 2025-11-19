@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('title','Üzenetek')
-@section('body_class','is-preload no-scrolly')
+@section('body_class','is-preload no-scrolly messages-page')
 
 @push('head')
-  <link rel="stylesheet" href="{{ asset('assets/css/message.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/messages.css') }}">
 @endpush
 
 @section('content')
